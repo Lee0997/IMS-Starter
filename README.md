@@ -1,37 +1,40 @@
-Coverage: 34%
-# Project Title
+Coverage: 60%
+Jira: https://supercreativename.atlassian.net/jira/software/projects/BSE/boards/1
 
-One Paragraph of project description goes here
+# Restaurant IMS
+
+In this project, I have been given a template codebase and created an inventory management system or IMS. The back-end application allows the user to create, delete, update and read from their customers, items and orders. This allows a company to correctly manage their inventory and time constraints. Alongside this, the application will allow the user to add to orders and calculate the total cost of the items contained within an order.
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+After receiving the system on your local computer, one only needs to actually start the application using the Eclipse IDE or any of your choice and running the file contained here: 
+
+![image](https://user-images.githubusercontent.com/84280851/161400215-221b320d-eeef-48be-95bc-115a92a2da7d.png)
+
+As you can see, the correct file is highlighted. Next step:
+
+![image](https://user-images.githubusercontent.com/84280851/161400262-701b47a9-494a-4385-b661-d6a6089545b1.png)
+
+Now, just press the circled button and you will have correctly started the application.
+Refer to the bottom of your screen or wherever your command line is and follow the prompts given to use the application.
+
+
+### Prerequisites/Installation
 
 What things you need to install the software and how to install them
+Follow this link https://www.eclipse.org/ide/ to reach the eclipse page and simply download the IDE according to your own needs.
 
-```
-Give examples
-```
+After this, the user will need to download both Java and Maven. Here are both links to do so:
+https://www.java.com/download/ie_manual.jsp
+https://maven.apache.org/download.cgi
 
-### Installing
+Now. Once the user has downloaded both Java and Maven, it is time to add them to your env and path.
+As this process can be quite uncomfortable for many, I have found a video to guide you step-by-step: https://www.youtube.com/watch?v=-O4QVijnA7Y
+Again, adding Maven to your path and env will be the same process but if you're unsure please use this video: https://www.youtube.com/watch?v=RfCWg5ay5B0
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+With this done, the user should be ready to use their new IDE to follow the deployment steps and use the program.
 
 ## Running the tests
 
@@ -39,30 +42,35 @@ Explain how to run the automated tests for this system. Break down into which te
 
 ### Unit Tests 
 
-Explain what these tests test, why and how to run them
+The tests in this codebase essentially aim to check that the values inserted, deleted or modified from our operations result in the correct outcome. If not, they will return as a failure and we do this to ensure the developer is aware of bad logic or broken code.
 
 ```
-Give an example
+	@Test
+	public void testCreate() {
+		final String F_NAME = "barry", L_NAME = "scott";
+		final Customer created = new Customer(F_NAME, L_NAME);
+
+		Mockito.when(utils.getString()).thenReturn(F_NAME, L_NAME);
+		Mockito.when(dao.create(created)).thenReturn(created);
+
+		assertEquals(created, controller.create());
+
+		Mockito.verify(utils, Mockito.times(2)).getString();
+		Mockito.verify(dao, Mockito.times(1)).create(created);
+	}
+```
+In this example, we are testing to see if the customer is being created properly inside of a controller. How is it doing this? So, inside of the SQL tables we will have some columns which have to be filled with information when creating a customer. In this example it is simply a customers full name. After the creation is executed, we will use Mockito, a dependency already included in the code to check validate wheter or not the customer created returns the same values that it was passed, in this case "barry" and "scott".
+
+```
+	@Test
+	public void testReadAll() {
+		List<Item> expected = new ArrayList<>();
+		expected.add(new Item(1L, "Cheese", "Yellow", 2));
+		assertEquals(expected, DAO.readAll());
+	}
 ```
 
-### Integration Tests 
-Explain what these tests test, why and how to run them
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+In the next example we are checking the Data-access-object or DAO. Whilst this one may look a bit more simple, it requires the user to have already inserted some data into the test tables in SQL. If this is done correctly, the readAll function should then be able to identify the same values that were inserted into the SQL and will pass/fail accordingly. This is done using the assertEquals method which does exactly what it says on the tin! It will check whether or not the values supplied match the values that exist and that they display correctly when used through the application.
 
 ## Built With
 
@@ -74,6 +82,7 @@ We use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
+* **Lee Nock** - *Project expansion* - [leenock](https://github.com/Lee0997)
 * **Chris Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 
 ## License

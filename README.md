@@ -1,5 +1,7 @@
 Coverage: 60%
 
+Presentation/Risk Assessment: https://drive.google.com/file/d/1tTknJUJRpQP5UqcqYwrdh9tEApMrMcwE/view?usp=sharing
+
 Jira: https://supercreativename.atlassian.net/jira/software/projects/BSE/boards/1
 
 # Restaurant IMS
@@ -78,6 +80,11 @@ In this example, we are testing to see if the customer is being created properly
 ```
 
 In the next example we are checking the Data-access-object or DAO. Whilst this one may look a bit more simple, it requires the user to have already inserted some data into the test tables in SQL. If this is done correctly, the readAll function should then be able to identify the same values that were inserted into the SQL and will pass/fail accordingly. This is done using the assertEquals method which does exactly what it says on the tin! It will check whether or not the values supplied match the values that exist and that they display correctly when used through the application.
+
+## My ERD
+
+![image](https://user-images.githubusercontent.com/84280851/161404000-01c70784-e217-4e1d-95be-4ccd4ad24fe9.png)
+
 
 ## Built With
 

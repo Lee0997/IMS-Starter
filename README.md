@@ -9,6 +9,12 @@ In this project, I have been given a template codebase and created an inventory 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+Firstly, to get your own copy, you simply need to fork the repository and perform a git clone using the SSH or HTTPS:
+
+![image](https://user-images.githubusercontent.com/84280851/161401710-40a4b3ef-171f-496e-82e4-d89836caccbb.png)
+
+To correctly perform a git clone, use your command line to navigate to a chosen directory and simply type "git clone <SSH/HTTPS URL> and this will then proceed to pull all of the codebase from the repo into your local system.
+
 After receiving the system on your local computer, one only needs to actually start the application using the Eclipse IDE or any of your choice and running the file contained here: 
 
 ![image](https://user-images.githubusercontent.com/84280851/161400215-221b320d-eeef-48be-95bc-115a92a2da7d.png)

@@ -58,8 +58,14 @@ REFERENCES items(id)
 );
 
 INSERT INTO `order_items` (`order_id`, `item_id`) VALUES ('1', '1');
+INSERT INTO `order_items` (`order_id`, `item_id`) VALUES ('2', '2');
+INSERT INTO `order_items` (`order_id`, `item_id`) VALUES ('3', '3');
+INSERT INTO `order_items` (`order_id`, `item_id`) VALUES ('4', '4');
+INSERT INTO `order_items` (`order_id`, `item_id`) VALUES ('5', '5');
 
-SELECT `orders`.`id`, `customers`.`first_name`, `customers`.`surname`, `order_items`.`item_id`, `items`.`name`
+SELECT * FROM `order_items` ORDER BY `order_id` DESC LIMIT 1;
+
+SELECT `orders`.`id`, `customers`.`first_name`, `customers`.`surname`, `order_items`.`item_id`, `items`.`name`, `items`.`description`, `items`.`price`
 FROM `orders` JOIN `customers` ON `orders`.`customer_id`=`customers`.`id` 
 JOIN `order_items` ON `orders`.`id` = `order_items`.`order_id`
-JOIN `items` ON `items`.`id` = `order_items`.`item_id` WHERE `orders`.`id` = '1'
+JOIN `items` ON `items`.`id` = `order_items`.`item_id` WHERE `orders`.`id` 

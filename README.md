@@ -1,5 +1,6 @@
 Coverage: 60%
-\nJira: https://supercreativename.atlassian.net/jira/software/projects/BSE/boards/1
+
+Jira: https://supercreativename.atlassian.net/jira/software/projects/BSE/boards/1
 
 # Restaurant IMS
 

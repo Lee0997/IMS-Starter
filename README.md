@@ -2,6 +2,10 @@ Coverage: 60%
 
 Presentation/Risk Assessment: https://drive.google.com/file/d/1tTknJUJRpQP5UqcqYwrdh9tEApMrMcwE/view?usp=sharing
 
+My ERD: https://drive.google.com/file/d/1hS5gbg13_vnLWlOLH1XYxwVIePqrwCgy/view?usp=sharing
+
+My UML: https://drive.google.com/file/d/1MEI-tGCuZlhhTpbJV0di0kXbkrQtHXk9/view?usp=sharing
+
 Jira: https://supercreativename.atlassian.net/jira/software/projects/BSE/boards/1
 
 # Restaurant IMS
